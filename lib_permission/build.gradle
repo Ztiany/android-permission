@@ -1,0 +1,41 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+}
+
+apply plugin: "com.vanniktech.maven.publish"
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0.1"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
+
+    implementation "com.yanzhenjie:permission:2.0.3"
+    implementation "com.jakewharton.timber:timber:4.7.1"
+}
