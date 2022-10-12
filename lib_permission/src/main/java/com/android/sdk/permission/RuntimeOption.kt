@@ -3,8 +3,6 @@ package com.android.sdk.permission
 import androidx.fragment.app.FragmentActivity
 import com.android.sdk.permission.api.PermissionRequest
 import com.android.sdk.permission.api.SettingRequest
-import com.android.sdk.permission.impl.andpermission.AndPermissionRequest
-import com.android.sdk.permission.impl.andpermission.AndSettingRequest
 import com.android.sdk.permission.impl.easypermission.InternalPermissionRequester
 import com.android.sdk.permission.utils.HostWrapper
 
@@ -14,7 +12,7 @@ class RuntimeOption(private val hostWrapper: HostWrapper) {
         return if (AutoPermission.isUseInternalApi()) {
             selfPermissionRequester(groups)
         } else {
-            AndPermissionRequest(hostWrapper, groups)
+            TODO()
         }
     }
 
@@ -32,7 +30,7 @@ class RuntimeOption(private val hostWrapper: HostWrapper) {
         return if (AutoPermission.isUseInternalApi()) {
             throw UnsupportedOperationException("Unsupported Operation")
         } else {
-            AndSettingRequest(hostWrapper)
+            TODO()
         }
     }
 

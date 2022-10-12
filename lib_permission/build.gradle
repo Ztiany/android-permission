@@ -6,11 +6,11 @@ plugins {
 apply plugin: "com.vanniktech.maven.publish"
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0.1"
     }
@@ -31,11 +31,13 @@ android {
 }
 
 dependencies {
-    implementation "androidx.fragment:fragment-ktx:1.4.1"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
+    implementation "androidx.appcompat:appcompat:1.5.1"
+    implementation "androidx.fragment:fragment-ktx:1.5.3"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.5.1"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
 
-    implementation "com.yanzhenjie:permission:2.0.3"
+    implementation 'com.guolindev.permissionx:permissionx:1.7.1'
+
     implementation "com.jakewharton.timber:timber:4.7.1"
 }

@@ -2,6 +2,7 @@ package com.android.sdk.permission.impl.easypermission;
 
 import android.content.Intent;
 
+import com.android.sdk.permission.api.IPermissionUI;
 import com.android.sdk.permission.utils.HostWrapper;
 
 import java.util.List;
@@ -18,14 +19,14 @@ class PermissionCallerImpl implements EasyPermissions.PermissionCaller {
 
     private HostWrapper mContextWrapper;
     private PermissionCallback mPermissionCallback;
-    private IPermissionUIProvider mIPermissionUIProvider;
+    private IPermissionUI mIPermissionUI;
 
-    PermissionCallerImpl(PermissionCallback permissionCallback, HostWrapper contextWrapper, boolean shouldAskAgain, boolean showTips, IPermissionUIProvider iPermissionUIProvider) {
+    PermissionCallerImpl(PermissionCallback permissionCallback, HostWrapper contextWrapper, boolean shouldAskAgain, boolean showTips, IPermissionUI iPermissionUI) {
         mPermissionCallback = permissionCallback;
         mContextWrapper = contextWrapper;
         mShouldAskAgain = shouldAskAgain;
         mShowTips = showTips;
-        mIPermissionUIProvider = iPermissionUIProvider;
+        mIPermissionUI = iPermissionUI;
     }
 
     @Override
@@ -38,12 +39,12 @@ class PermissionCallerImpl implements EasyPermissions.PermissionCaller {
     }
 
     @Override
-    public IPermissionUIProvider getPermissionUIProvider() {
+    public IPermissionUI getPermissionUIProvider() {
         Timber.d("getPermissionUIProvider() called");
-        if (mIPermissionUIProvider == null) {
+        if (mIPermissionUI == null) {
             return PermissionUIProviderFactory.getPermissionUIProvider();
         }
-        return mIPermissionUIProvider;
+        return mIPermissionUI;
     }
 
     /**

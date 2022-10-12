@@ -31,6 +31,9 @@ import java.util.List;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import com.android.sdk.permission.api.IPermissionUI;
+
 import timber.log.Timber;
 
 /**
@@ -57,7 +60,7 @@ final class EasyPermissions {
          */
         Object getRequester();
 
-        IPermissionUIProvider getPermissionUIProvider();
+        IPermissionUI getPermissionUIProvider();
     }
 
     static private Context getContext(PermissionCaller permissionCaller) {

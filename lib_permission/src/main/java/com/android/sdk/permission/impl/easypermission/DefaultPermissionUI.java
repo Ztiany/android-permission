@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.widget.Toast;
 
 import com.android.sdk.permission.R;
+import com.android.sdk.permission.api.IPermissionUI;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -15,8 +16,7 @@ import static com.android.sdk.permission.impl.easypermission.PermissionUtils.cre
 import static com.android.sdk.permission.impl.easypermission.PermissionUtils.createPermissionDeniedTip;
 import static com.android.sdk.permission.impl.easypermission.PermissionUtils.createPermissionRationaleText;
 
-
-class DefaultPermissionUIProvider implements IPermissionUIProvider {
+class DefaultPermissionUI implements IPermissionUI {
 
     private static final int COLOR_STRING = Color.parseColor("#FF4081");
 

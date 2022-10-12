@@ -10,6 +10,7 @@ import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 
+import com.android.sdk.permission.api.IPermissionUI;
 import com.android.sdk.permission.api.PermissionRequest;
 import com.android.sdk.permission.utils.HostWrapper;
 
@@ -36,7 +37,7 @@ public class InternalPermissionRequester implements PermissionRequest {
 
     private OnAllPermissionGrantedListener mOnAllPermissionGrantedListener;
     private OnPermissionDeniedListener mOnPermissionDeniedListener;
-    private IPermissionUIProvider mPermissionUIProvider;
+    private IPermissionUI mPermissionUIProvider;
 
     private HostWrapper mHostWrapper;
 
@@ -95,7 +96,7 @@ public class InternalPermissionRequester implements PermissionRequest {
 
     @NotNull
     @Override
-    public InternalPermissionRequester customUI(@NonNull IPermissionUIProvider uiProvider) {
+    public InternalPermissionRequester customUI(@NonNull IPermissionUI uiProvider) {
         mPermissionUIProvider = uiProvider;
         return this;
     }

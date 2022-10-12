@@ -1,4 +1,4 @@
-package com.android.sdk.permission.impl.easypermission;
+package com.android.sdk.permission.api;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import androidx.annotation.NonNull;
 
 
-public interface IPermissionUIProvider {
+public interface IPermissionUI {
 
     /**
      * 显示需要获取权限的原因，询问是否继续

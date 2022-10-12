@@ -1,19 +1,21 @@
 package com.android.sdk.permission.impl.easypermission;
 
 
+import com.android.sdk.permission.api.IPermissionUI;
+
 public class PermissionUIProviderFactory {
 
-    private static IPermissionUIProvider sIPermissionUIProvider;
+    private static IPermissionUI sIPermissionUI;
 
-    static IPermissionUIProvider getPermissionUIProvider() {
-        if (sIPermissionUIProvider == null) {
-            sIPermissionUIProvider = new DefaultPermissionUIProvider();
+    static IPermissionUI getPermissionUIProvider() {
+        if (sIPermissionUI == null) {
+            sIPermissionUI = new DefaultPermissionUI();
         }
-        return sIPermissionUIProvider;
+        return sIPermissionUI;
     }
 
-    public static void registerPermissionUIProvider(IPermissionUIProvider iPermissionUIProvider) {
-        sIPermissionUIProvider = iPermissionUIProvider;
+    public static void registerPermissionUIProvider(IPermissionUI iPermissionUI) {
+        sIPermissionUI = iPermissionUI;
     }
 
 }

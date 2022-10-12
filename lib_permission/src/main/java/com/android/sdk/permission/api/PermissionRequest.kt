@@ -1,7 +1,5 @@
 package com.android.sdk.permission.api
 
-import com.android.sdk.permission.impl.easypermission.IPermissionUIProvider
-
 interface PermissionRequest {
 
     fun onGranted(granted: (List<String>) -> Unit): PermissionRequest
@@ -12,7 +10,7 @@ interface PermissionRequest {
 
     fun askAgain(askAgain: Boolean): PermissionRequest
 
-    fun customUI(uiProvider: IPermissionUIProvider): PermissionRequest
+    fun customUI(uiProvider: IPermissionUI): PermissionRequest
 
     fun start()
 
